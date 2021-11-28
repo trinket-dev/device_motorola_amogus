@@ -253,6 +253,10 @@ PRODUCT_COPY_FILES += \
 
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/props/vendor.prop
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.soc.manufacturer=Qualcomm \
+    ro.soc.model=SM6125
+
 # Power
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/vendor/etc/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
