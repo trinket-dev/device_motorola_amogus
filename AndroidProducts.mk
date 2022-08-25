@@ -12,8 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_amogus.mk
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/arrow_amogus.mk
 
 COMMON_LUNCH_CHOICES += \
-    aosp_amogus-eng \
-    aosp_amogus-userdebug
+    arrow_amogus-eng \
+    arrow_amogus-userdebug
