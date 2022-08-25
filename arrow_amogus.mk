@@ -26,7 +26,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 # All components inherited here go to product image
 #
-$(call inherit-product, vendor/hentai/build/product/hentai_product.mk)
+# Inherit some common ArrowOS stuff.
+$(call inherit-product, vendor/arrow/config/common.mk)
 
 #
 # All components inherited here go to vendor image
@@ -34,14 +35,17 @@ $(call inherit-product, vendor/hentai/build/product/hentai_product.mk)
 # TODO(b/136525499): move *_vendor.mk into the vendor makefile later
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/amogus/device.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
-PRODUCT_NAME := hentai_amogus
+PRODUCT_NAME := arrow_amogus
 PRODUCT_DEVICE := amogus
-PRODUCT_MODEL := Moto G(8) Family (hOS)
+PRODUCT_MODEL := Moto G(8) Family (AOSP)
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_SHIPPING_API_LEVEL := 29
+
+ARROW_GAPPS := true

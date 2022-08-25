@@ -14,6 +14,8 @@
 
 DEVICE_PATH := device/motorola/amogus
 
+BUILD_BROKEN_DUP_RULES := true
+
 # Platform
 PRODUCT_PLATFORM := trinket
 
@@ -37,6 +39,11 @@ BOARD_RAMDISK_OFFSET     := 0x01000000
 BOARD_DTB_OFFSET         := 0x01f00000
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=4e00000.dwc3
+
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_KERNEL_SOURCE := kernel/motorola/trinket
+TARGET_KERNEL_CONFIG := vendor/amogus_defconfig
+TARGET_KERNEL_CLANG_COMPILE := true
 
 # DTB
 BOARD_PREBUILT_DTBIMAGE_DIR := device/motorola/amogus-kernel/dtbs
