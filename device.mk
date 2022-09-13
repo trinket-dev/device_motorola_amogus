@@ -15,6 +15,10 @@
 # Device path
 DEVICE_PATH := device/motorola/amogus
 
+# MotoActions
+PRODUCT_PACKAGES += \
+    MotoActions
+
 # Device overlays
 DEVICE_PACKAGE_OVERLAYS += \
     device/motorola/amogus/overlay
