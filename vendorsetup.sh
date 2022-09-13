@@ -24,5 +24,10 @@ git clone https://github.com/moto-common/android_vendor_sony_timekeep vendor/son
 git clone https://github.com/moto-common/android_device_motorola_amogus-kernel -b 13 device/motorola/amogus-kernel && \
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_display_sm8150.git -b 13 vendor/qcom/opensource/display/sm8150 && \
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_media_sm8150.git -b 13 vendor/qcom/opensource/media/sm8150 && \
-git clone https://github.com/moto-common/platform_vendor_qcom_opensource_audio_sm8150.git -b 13 vendor/qcom/opensource/audio/sm8150
+git clone https://github.com/moto-common/platform_vendor_qcom_opensource_audio_sm8150.git -b 13 vendor/qcom/opensource/audio/sm8150 && \
+git clone https://github.com/JarlPenguin/platform_hardware_motorola hardware/motorola && \
+rm -rf hardware/qcom-caf/wlan && \
+git clone https://github.com/moto-common/platform_hardware_qcom-caf_wlan hardware/qcom-caf/wlan && \
+cd hardware/qcom/wlan && git fetch https://github.com/ProtonAOSP-NS/hardware_qcom_wlan && git cherry-pick e348c0c238dcd09223e5847d9f86ccf16594b735 && \
+cd ../../..
 
