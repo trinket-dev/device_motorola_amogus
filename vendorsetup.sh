@@ -31,10 +31,10 @@ rm -rf hardware/qcom-caf/wlan && \
 rm -rf vendor/qcom/opensource/audio/st-hal && \
 rm -rf vendor/qcom/opensource/audio-hal/st-hal && \
 rm -rf vendor/qcom/opensource/dataservices && \
-git clone https://github.com/moto-common/platform_vendor_qcom_opensource_dataservices vendor/qcom/opensource/dataservices
-git clone https://github.com/moto-common/platform_vendor_qcom_opensource_audio_st-hal vendor/qcom/opensource/audio/st-hal
+git clone https://github.com/moto-common/platform_vendor_qcom_opensource_dataservices vendor/qcom/opensource/dataservices && \
+git clone https://github.com/moto-common/platform_vendor_qcom_opensource_audio_st-hal vendor/qcom/opensource/audio/st-hal && \
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_display-commonsys-intf vendor/qcom/opensource/display-commonsys-intf && \
 git clone https://github.com/moto-common/platform_hardware_qcom-caf_wlan hardware/qcom-caf/wlan && \
 cd hardware/qcom/wlan && git fetch https://github.com/ProtonAOSP-NS/hardware_qcom_wlan && git cherry-pick e348c0c238dcd09223e5847d9f86ccf16594b735 && \
-cd ../../..
-
+cd ../../.. && \
+git clone https://github.com/LineageOS/android_system_qcom -b lineage-20 system/qcom
