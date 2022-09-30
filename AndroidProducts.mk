@@ -13,8 +13,8 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_amogus.mk
+    $(LOCAL_DIR)/lineage_amogus.mk
 
 COMMON_LUNCH_CHOICES += \
-    arrow_amogus-eng \
-    arrow_amogus-userdebug
+    lineage_amogus-eng \
+    lineage_amogus-userdebug
