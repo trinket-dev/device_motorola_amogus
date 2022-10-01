@@ -35,6 +35,14 @@ git clone https://github.com/moto-common/platform_vendor_qcom_opensource_dataser
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_audio_st-hal vendor/qcom/opensource/audio/st-hal && \
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_display-commonsys-intf vendor/qcom/opensource/display-commonsys-intf && \
 git clone https://github.com/moto-common/platform_hardware_qcom-caf_wlan hardware/qcom-caf/wlan && \
-cd hardware/qcom/wlan && git fetch https://github.com/ProtonAOSP-NS/hardware_qcom_wlan && git cherry-pick e348c0c238dcd09223e5847d9f86ccf16594b735 && \
+cd hardware/qcom/wlan && \
+
+if grep -r '#include <linux-private/linux/fib_rules.h>' qcwcn/wifi_hal/common.cpp ; then
+	continue
+else
+	"$(git fetch https://github.com/ProtonAOSP-NS/hardware_qcom_wlan)"
+	"$(git cherry-pick e348c0c238dcd09223e5847d9f86ccf16594b735)"
+fi
+
 cd ../../.. && \
-git clone https://github.com/LineageOS/android_system_qcom -b lineage-20 system/qcom
+[  -d 'system/qcom'  ] || "$(git clone https://github.com/LineageOS/android_system_qcom -b lineage-20 system/qcom)"
