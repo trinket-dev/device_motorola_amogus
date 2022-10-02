@@ -13,6 +13,7 @@ fi
 # Device tree and dependencies.
 git clone https://github.com/moto-common/android_device_motorola_common.git -b 13 device/motorola/common && \
 rm -rf vendor/qcom/opensource/interfaces && \
+rm -rf device/qcom/common && \
 git clone https://github.com/moto-common/android_device_qcom_common.git -b 13 device/qcom/common && \
 git clone https://github.com/moto-common/android_vendor_motorola_amogus -b 13 vendor/motorola/amogus && \
 git clone https://github.com/moto-common/android_vendor_motorola_common -b 13 vendor/motorola/common && \
@@ -36,13 +37,13 @@ git clone https://github.com/moto-common/platform_vendor_qcom_opensource_audio_s
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_display-commonsys-intf vendor/qcom/opensource/display-commonsys-intf && \
 git clone https://github.com/moto-common/platform_hardware_qcom-caf_wlan hardware/qcom-caf/wlan && \
 cd hardware/qcom/wlan && \
-
 if grep -r '#include <linux-private/linux/fib_rules.h>' qcwcn/wifi_hal/common.cpp ; then
+	cd ../../..
 	continue
 else
-	"$(git fetch https://github.com/ProtonAOSP-NS/hardware_qcom_wlan)"
-	"$(git cherry-pick e348c0c238dcd09223e5847d9f86ccf16594b735)"
+	$(git fetch https://github.com/ProtonAOSP-NS/hardware_qcom_wlan)
+	$(git cherry-pick e348c0c238dcd09223e5847d9f86ccf16594b735)
+	cd ../../..
 fi
 
-cd ../../.. && \
-[  -d 'system/qcom'  ] || "$(git clone https://github.com/LineageOS/android_system_qcom -b lineage-20 system/qcom)"
+[  -d system/qcom  ] || $(git clone https://github.com/LineageOS/android_system_qcom -b lineage-20 system/qcom)
