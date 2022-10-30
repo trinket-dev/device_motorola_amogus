@@ -14,10 +14,10 @@ fi
 git clone https://github.com/moto-common/android_device_motorola_common.git -b 13 device/motorola/common && \
 rm -rf vendor/qcom/opensource/interfaces && \
 rm -rf device/qcom/common && \
-git clone https://github.com/moto-common/android_device_qcom_common.git -b 13 device/qcom/common && \
+git clone https://github.com/moto-common/android_device_qcom_common.git -b master device/qcom/common && \
 git clone https://github.com/moto-common/android_vendor_motorola_amogus -b 13 vendor/motorola/amogus && \
 git clone https://github.com/moto-common/android_vendor_motorola_common -b 13 vendor/motorola/common && \
-git clone https://github.com/moto-common/android_vendor_qcom_common -b 13 vendor/qcom/common && \
+git clone https://github.com/moto-common/android_vendor_qcom_common -b master vendor/qcom/common && \
 git clone https://github.com/moto-common/android_kernel_motorola_msm-4.14 -b 13 kernel/motorola/trinket && \
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_interfaces -b 13 vendor/qcom/opensource/interfaces && \
 git clone https://github.com/moto-common/android_device_sony_sepolicy device/sony/sepolicy && \
@@ -41,8 +41,8 @@ if grep -r '#include <linux-private/linux/fib_rules.h>' qcwcn/wifi_hal/common.cp
 	cd ../../..
 	continue
 else
-	$(git fetch https://github.com/ProtonAOSP-NS/hardware_qcom_wlan)
-	$(git cherry-pick e348c0c238dcd09223e5847d9f86ccf16594b735)
+	$(git fetch https://github.com/LineageOS/android_hardware_qcom_wlan lineage-20.0)
+	$(git cherry-pick 183884c2c549b6be3e03c63653aa911fb339a871)
 	cd ../../..
 fi
 
