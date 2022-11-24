@@ -26,7 +26,7 @@ git clone https://github.com/moto-common/android_device_motorola_amogus-kernel -
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_display_sm8150.git -b 13 vendor/qcom/opensource/display/sm8150 && \
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_media_sm8150.git -b 13 vendor/qcom/opensource/media/sm8150 && \
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_audio_sm8150.git -b 13 vendor/qcom/opensource/audio/sm8150 && \
-git clone https://github.com/JarlPenguin/platform_hardware_motorola hardware/motorola && \
+git clone https://github.com/trinket-dev/platform_hardware_motorola hardware/motorola && \
 rm -rf device/qcom/common/vendor/embmssl/Android.bp && \
 rm -rf hardware/qcom-caf/wlan && \
 rm -rf vendor/qcom/opensource/audio/st-hal && \
