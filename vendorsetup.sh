@@ -35,6 +35,7 @@ rm -rf vendor/qcom/opensource/dataservices && \
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_dataservices vendor/qcom/opensource/dataservices && \
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_audio_st-hal vendor/qcom/opensource/audio/st-hal && \
 git clone https://github.com/moto-common/platform_vendor_qcom_opensource_display-commonsys-intf vendor/qcom/opensource/display-commonsys-intf && \
+git clone https://github.com/moto-common/platform_vendor_qcom_opensource_thermal.git vendor/qcom/opensource/thermal && \
 git clone https://github.com/moto-common/platform_hardware_qcom-caf_wlan hardware/qcom-caf/wlan && \
 cd hardware/qcom/wlan && \
 if grep -r '#include <linux-private/linux/fib_rules.h>' qcwcn/wifi_hal/common.cpp ; then
