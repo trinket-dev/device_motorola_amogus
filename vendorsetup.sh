@@ -39,7 +39,8 @@ git clone https://github.com/moto-common/platform_hardware_qcom-caf_wlan hardwar
 cd hardware/qcom/wlan && \
 if grep -r '#include <linux-private/linux/fib_rules.h>' qcwcn/wifi_hal/common.cpp ; then
 	cd ../../..
-	continue
+elif grep -r '#include <linux-private/linux/fib_rules.h>' wcn6740/qcwcn/wifi_hal/common.cpp ; then
+	cd ../../..
 else
 	$(git fetch https://github.com/LineageOS/android_hardware_qcom_wlan lineage-20.0)
 	$(git cherry-pick 183884c2c549b6be3e03c63653aa911fb339a871)
